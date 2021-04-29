@@ -3,8 +3,7 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 public class Bush extends Plant {
 
     private String fruit;
-    LeafType leafType;
-
+    private LeafType leafType;
 
     public Bush(String name) {
         super(name);
@@ -13,7 +12,6 @@ public class Bush extends Plant {
     public Bush(String name, double height) {
         super(name, height);
     }
-
 
     public String getFruit() {
         return fruit;

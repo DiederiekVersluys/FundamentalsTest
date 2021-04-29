@@ -9,8 +9,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
 public class ForestNoteBook {
+
     private List<Carnivore> carnivores = new ArrayList<>();
     private List<Omnivore> omnivores = new ArrayList<>();
     private List<Herbivore> herbivores = new ArrayList<>();
@@ -18,6 +18,7 @@ public class ForestNoteBook {
     private List<Plant> plants = new ArrayList<>();
 
     public ForestNoteBook() {
+        
     }
 
     public List<Carnivore> getCarnivores() {
@@ -28,7 +29,6 @@ public class ForestNoteBook {
         for (Carnivore carnivore : carnivores) {
             addAnimal(carnivore);
         }
-
     }
 
     public List<Omnivore> getOmnivores() {
@@ -56,47 +56,31 @@ public class ForestNoteBook {
     }
 
     public int getAnimalCount() {
-        return animals.size();
+        return this.carnivores.size() + this.omnivores.size() + this.herbivores.size();
     }
 
     public void addAnimal(Animal animal) {
 
-        if (!isAnimalExists(animal)){
+        if (!isAnimalExists(animal)) {
             this.animals.add(animal);
-        }else {
+        } else {
             System.err.println("This animal has already been recorded.");
         }
+
         if (animal instanceof Carnivore) {
-
             carnivores.add((Carnivore) animal);
-
         } else if (animal instanceof Omnivore) {
-
             omnivores.add((Omnivore) animal);
-
         } else if (animal instanceof Herbivore) {
-
             herbivores.add((Herbivore) animal);
-
         }
 
-        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    public void addPlant(Plant plant){
+    public void addPlant(Plant plant) {
         plants.add(plant);
     }
+
     private boolean isAnimalExists(final Animal animal) {
 
         return animals
@@ -107,19 +91,19 @@ public class ForestNoteBook {
 
     }
 
-    public void printNoteBook(){
+    public void printNoteBook() {
 
-        for (Animal animal : animals){
+        for (Animal animal : animals) {
             System.out.println(animal);
         }
 
-        for (Plant plant : plants){
+        for (Plant plant : plants) {
             System.out.println(plant);
         }
 
     }
 
-    public void sortAnimalsByName(){
+    public void sortAnimalsByName() {
 
         Collections.sort(animals, new Comparator<Animal>() {
             @Override
@@ -130,9 +114,7 @@ public class ForestNoteBook {
 
     }
 
-
-
-    public void sortPlantsByName(){
+    public void sortPlantsByName() {
 
         Collections.sort(plants, new Comparator<Plant>() {
 
@@ -141,8 +123,6 @@ public class ForestNoteBook {
                 return o1.getName().toLowerCase(Locale.ROOT).compareTo(o2.getName().toLowerCase(Locale.ROOT));
             }
         });
-
-
 
     }
 

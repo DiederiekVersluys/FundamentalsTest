@@ -3,13 +3,13 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 
 public class Tree extends Plant {
-    LeafType leafType;
-
+  
+    private LeafType leafType;
 
     public Tree(String name) {
         super(name);
     }
-
+    
     public Tree(String name, double height) {
         super(name, height);
     }

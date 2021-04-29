@@ -2,7 +2,7 @@ package be.intecbrussel.the_notebook.entities.plant_entities;
 
 public class Flower extends Plant {
 
-    Scent smell;
+    private Scent smell;
 
     public Flower(String name) {
         super(name);
